@@ -40,6 +40,7 @@ function checkCashRegister(price, cash, cid) {
         thisCashier.status = "INSUFFICIENT_FUNDS";
         return thisCashier
     }
+    let theCid = []
     for (let i = 8; i>= 0; i--){
         let pos= cid[i];
         if(pos[1]>0){
@@ -51,13 +52,16 @@ function checkCashRegister(price, cash, cid) {
             if ((change-toUse)>=0 && pos[1]>toUse){
                 change -= toUse;
                 cid[i][1] -= toUse;
+                theCid.unshift([cid[i][0],toUse])
             }else{
+                theCid.unshift([cid[i]])
                 change-=pos[1];
                 cid[i][1]=0;
             }
         }}
 
     }
+    thisCashier.change = theCid;
     thisCashier.status = "OPEN";
     return thisCashier
 

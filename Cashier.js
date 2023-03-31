@@ -1,18 +1,27 @@
-/*
-function theChange(chage,cashier){
-    let cangearr = [100,20,10,5,1,0.25,0.1,0.05,0.01]
-    for (let i = 0; i<= changearr.length; i++){
-        if (change%cashier[i]>0){
-            console.log("ando")
+
+function theChange(chage,cashier,changeArr){
+    
+    
+    for (let i = 0; i<= changeArr.length; i++){
+        if (change%changeArr[i][0]>0){
+            console.log("yw")
+            let timesFor = Math.trunc(change/changeArr[i][1])
+            console.log(timesFor);
+
+            if ((chaneArr[i][1]-(changeArr[i][1]*timesFor))<0){
+                change-=chaneArr[i][1]
+            }else{
+                chaneArr[i][1]-=changeArr[i][1]*timesFor
+            }
 
             }
         }
     }
-*/
+
 function nameForChange(name){
     switch (name){
         case "PENNY":
-            return 0.01
+            return [0.01]
         case "NICKEL":
             return 0.05
         case "DIME":
@@ -36,15 +45,19 @@ function checkCashier(cid){
     let changeArr=[];
     for (let i = 0; i<=cid.length;){
         if (cid[i][1]>=0){
-            changeArr.unshift(nameForChange(cid[i][0]))
+            changeArr.unshift([nameForChange(cid[i][0]),cid[i][1]])
         }
     }
+
     return changeArr
 }
 
 function checkCashRegister(price, cash, cid) {
-  let change = cash-price;
-  console.log(checkCashier(cid))
+    let change = cash-price;
+    const cashAvaliable = checkCashier(cid);
+
+
+    console.log(checkCashier(cid))
   
 }
 

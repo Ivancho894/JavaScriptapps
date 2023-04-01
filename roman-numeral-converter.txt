@@ -1,0 +1,56 @@
+//Variable initialization
+let roman = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+let number=[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+
+
+//Main function 
+function convertToRoman(num) {
+  let result=''
+  //num it's a number?
+  let numCheck=isNaN(num);
+  //Lets check
+  if (!numCheck){
+  //Yes, it's a number
+
+    for (let j = 0; j <=13 ; j++){
+        if (num>=number[j]){
+            result=`${result}${roman[j]}`
+            num-=number[j]
+            j--
+          }
+      }
+  }else {
+    return "only numbers please"
+  }
+ 
+  return result;
+}
+
+console.log( convertToRoman( 2 ) );
+console.log( convertToRoman( 3 ) );
+console.log( convertToRoman( 4 ) );
+console.log( convertToRoman( 5 ) );
+console.log( convertToRoman( 9 ) );
+console.log( convertToRoman( 12 ) );
+console.log( convertToRoman( 16 ) );
+console.log( convertToRoman( 29 ) );
+console.log( convertToRoman( 44 ) );
+console.log( convertToRoman( 48 ) );
+console.log( convertToRoman( 68 ) );
+console.log( convertToRoman( 83 ) );
+console.log( convertToRoman( 97 ) );
+console.log( convertToRoman( 99 ) );
+console.log( convertToRoman( 400 ) );
+console.log( convertToRoman( 500 ) );
+console.log( convertToRoman( 501 ) );
+console.log( convertToRoman( 649 ) );
+console.log( convertToRoman( 798 ) );
+console.log( convertToRoman( 891 ) );
+console.log( convertToRoman( 999 ) );
+console.log( convertToRoman( 1000 ) );
+console.log( convertToRoman( 1004 ) );
+console.log( convertToRoman( 1006 ) );
+console.log( convertToRoman( 1023 ) );
+console.log( convertToRoman( 2014 ) );
+console.log( convertToRoman( 3999 ) );
+console.log( convertToRoman( 9999 ) );;

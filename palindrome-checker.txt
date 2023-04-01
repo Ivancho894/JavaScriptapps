@@ -1,0 +1,21 @@
+let c = 0;
+let rts = "";
+function capicua(str,rts,c){
+  if(str == rts){
+    return true
+  }else if (str[c-1] == rts[c-1] || rts == ""){
+    c += 1;
+    rts += str[str.length-c];
+    return capicua(str,rts,c)
+  }
+  return false
+  
+}
+
+function palindrome(str) {
+  str = str.replace(/[^a-z0-9]/gi, '').toLowerCase()
+  return capicua(str,rts,c)
+  
+  
+}
+console.log(palindrome("0_0 (: /-\ :) 0_0"));

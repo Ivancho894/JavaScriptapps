@@ -1,0 +1,46 @@
+let result=""
+
+
+function stringToArr(str){
+  let arr =[]
+  for (let letter in str){
+    
+    arr.push(str[letter])
+  }
+  return arr
+}
+
+
+function arrToString(arr){
+  if (arr.length == 0){
+    return ""
+  }else {
+    return `${arr[arr.length-1]}${arr.pop(),arrToString(arr)}`
+  }
+};
+
+
+function reverseString(str) {
+
+  return arrToString(stringToArr(str))
+   
+}
+console.log(reverseString("hedddddf"));
+
+
+
+
+
+
+
+
+
+    //return `${str[str.length]}+${reverseString(str)}`
+  
+
+  /*let arr = []
+  console.log(str[0])
+  for (let i = str.length; i>0;i--){
+    arr.push()
+  }
+  return str;*/

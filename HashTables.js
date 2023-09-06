@@ -6,7 +6,7 @@ HashTable.prototype.hash = function(key){
     let hash = 0;
 
     for (let i = 0; i< key.length;i++){
-        hash += key.charCodeAt(1);
+        hash += key.charCodeAt();
     }
 
     return hash % this.numBuckets
@@ -26,8 +26,12 @@ HashTable.prototype.set = function(key,value){
 }
 
 HashTable.prototype.get = function(key){
-    return this.array[this.hash(key)][key]
-}
+    let pos = this.array[this.hash(key)]
+  return pos?pos[key]:null;
+  }
+  HashTable.prototype.hasKey = function(key){
+    return !!this.get(key)
+  }
 
 
 var laTabla = new HashTable();
@@ -38,3 +42,4 @@ laTabla.set('Ivandd',42)
 laTabla.set('Ivanq',42)
 console.log(laTabla)
 console.log(laTabla.get('Ivan'))
+console.log(laTabla.hasKey('Idvan'))

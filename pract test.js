@@ -35,3 +35,6 @@ HashTables.prototype.hash = function(key){
     
 }
 
+
+
+

@@ -10,12 +10,16 @@ LinkedList.prototype.add = function (value){
     let node = new Node(value);
     let curren = this.head;
     
-    if(!curren) this.head = node;
-
-    while(curren.next){
-        curren=curren.next;
+    if(!curren) {
+        this.head = node
+        }else{
+        
+            while(curren.next){
+            curren=curren.next;
+            }   
+        
+            curren.next = node;
     }
-    curren.next = node;
 }
 
 
